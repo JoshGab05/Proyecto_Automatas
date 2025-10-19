@@ -8,11 +8,13 @@ Proyecto modular con Maven + JFlex listo para empezar.
 - pythonlex-gui: placeholder; añadiremos Swing en el siguiente paso
 
 ## Build
-mvn -q -f pom.xml clean install
+mvn -pl pythonlex-core clean install
 
-## Probar por consola (Engine)
-# Windows (usa ';' en lugar de ':')
-java -cp pythonlex-engine/target/classes;pythonlex-lexer/target/classes;pythonlex-core/target/classes com.pythonlex.engine.MainConsole
+mvn -pl pythonlex-lexer clean install
 
-# Linux/macOS
-java -cp pythonlex-engine/target/classes:pythonlex-lexer/target/classes:pythonlex-core/target/classes com.pythonlex.engine.MainConsole
+mvn -pl pythonlex-gui clean compile
+
+#Ejecutar el grafico
+
+mvn -q -pl pythonlex-gui exec:java
+
