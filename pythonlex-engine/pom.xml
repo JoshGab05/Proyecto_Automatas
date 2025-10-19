@@ -1,12 +1,23 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+
   <parent>
     <groupId>com.pythonlex</groupId>
     <artifactId>pythonlex-parent</artifactId>
     <version>1.0.0</version>
   </parent>
+
   <artifactId>pythonlex-engine</artifactId>
+  <name>pythonlex-engine</name>
+  <packaging>jar</packaging>
+
+  <properties>
+    <maven.compiler.release>17</maven.compiler.release>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>com.pythonlex</groupId>
@@ -19,4 +30,18 @@
       <version>1.0.0</version>
     </dependency>
   </dependencies>
+
+  <build>
+    <plugins>
+      <!-- Para poder ejecutar con: mvn -q -pl pythonlex-engine exec:java -Dexec.args="ruta\archivo.py" -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.3.0</version>
+        <configuration>
+          <mainClass>com.pythonlex.engine.MainConsole</mainClass>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>

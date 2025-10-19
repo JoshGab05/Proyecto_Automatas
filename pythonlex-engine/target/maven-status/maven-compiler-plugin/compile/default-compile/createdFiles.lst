@@ -1,2 +1,5 @@
+com\pythonlex\engine\Colorizer$1.class
+com\pythonlex\engine\Colorizer.class
+com\pythonlex\engine\TokenColors.class
 com\pythonlex\engine\MainConsole.class
-com\pythonlex\engine\PythonAnalyzer.class
+com\pythonlex\engine\Analyzer.class

@@ -1,4 +1,5 @@
 com\pythonlex\core\AnalysisResult.class
 com\pythonlex\core\TokenType.class
 com\pythonlex\core\Token.class
+com\pythonlex\core\ColorTheme.class
 com\pythonlex\core\Analyzer.class

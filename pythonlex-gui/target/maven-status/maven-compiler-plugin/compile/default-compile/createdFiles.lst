@@ -1,3 +1,9 @@
-com\pythonlex\gui\AppFrame.class
-com\pythonlex\gui\AppFrame$1.class
-com\pythonlex\gui\Main.class
+com\pythonlex\gui\LineNumberView$SimpleDocumentListener.class
+com\pythonlex\gui\TokenStatsPanel$1.class
+com\pythonlex\gui\LineNumberView.class
+com\pythonlex\gui\MainWindow.class
+com\pythonlex\gui\TokenStyles.class
+com\pythonlex\gui\PostLexValidator.class
+com\pythonlex\gui\PostLexValidator$Issue.class
+com\pythonlex\gui\TokenStyles$1.class
+com\pythonlex\gui\TokenStatsPanel.class

@@ -1,7 +1,31 @@
 package com.pythonlex.core;
+
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+
 public class AnalysisResult {
-    public final List<Token> tokens;
-    public final Token firstError;
-    public AnalysisResult(List<Token> tokens, Token firstError) { this.tokens = tokens; this.firstError = firstError; }
+    private boolean valid = true;
+    private int errorLine = -1;
+    private int errorColumn = -1;
+    private String errorLexeme = null;
+    private final List<Token> tokens = new ArrayList<>();
+
+    public AnalysisResult() { }
+
+    public void addToken(Token t) {
+        if (t.getType() == TokenType.ERROR && valid) {
+            valid = false;
+            errorLine = t.getLine();
+            errorColumn = t.getColumn();
+            errorLexeme = t.getLexeme();
+        }
+        tokens.add(t);
+    }
+
+    public boolean isValid() { return valid; }
+    public int getErrorLine() { return errorLine; }
+    public int getErrorColumn() { return errorColumn; }
+    public String getErrorLexeme() { return errorLexeme; }
+    public List<Token> getTokens() { return Collections.unmodifiableList(tokens); }
 }
